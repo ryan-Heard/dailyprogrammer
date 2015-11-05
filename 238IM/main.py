@@ -27,14 +27,14 @@ def guess(guess, key):
         if user_letter == actual:
             correct += 1
 
-    print str(correct)+'/'+str(len(key))
+    print (str(correct)+'/'+str(len(key)))
     if correct == len(key):
         return True
     else:
         return False
 
 def game():
-    level_selection = eval(raw_input("Enter difficulty (1-5): "))
+    level_selection = eval(input("Enter difficulty (1-5): "))
     the_list = get_list(level_selection)
     the_correct_word = the_list[random.randrange(0,len(the_list))]
 
@@ -42,7 +42,7 @@ def game():
         print (word +'\n')
 
     for i in range(0,4):
-        attempt = raw_input("Guess Word: ")
+        attempt = input("Guess Word: ")
         result = guess(attempt,the_correct_word )
         if result:
             return True
